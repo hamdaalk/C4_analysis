@@ -1,0 +1,26 @@
+main() <int main (int argc, char **argv) at C4.c:424>:
+    printf()
+    open()
+    malloc()
+    memset()
+    next() <void next () at C4.c:59>:
+        printf()
+        memcmp()
+    read()
+    close()
+    stmt() <void stmt () at C4.c:374> (R):
+        next() <void next () at C4.c:59>:
+            printf()
+            memcmp()
+        printf()
+        exit()
+        expr() <void expr (int lev) at C4.c:171> (R):
+            printf()
+            exit()
+            next() <void next () at C4.c:59>:
+                printf()
+                memcmp()
+            expr() <void expr (int lev) at C4.c:171> (recursive: see 17)
+        stmt() <void stmt () at C4.c:374> (recursive: see 11)
+    free()
+    memcmp()
