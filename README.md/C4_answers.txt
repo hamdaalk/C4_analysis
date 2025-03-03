@@ -1,0 +1,33 @@
+5. Answer Conceptual Questions: 
+• Provide written answers to the following questions: 
+
+
+1. What is the purpose of the next() function, and how does it contribute to the compilation 
+process? 
+
+-> It is used in lexical analysis, keeps iterating through the input source code and retrieving the next token for processing  
+-> It reads the next token in the sequence, it helps the compiler to classify part of the code for analysis purpose 
+-> It is essential for parsing and has a better understanding of the structure of the source code
+
+
+2. How does C4 handle symbol resolution (e.g., variables, functions)? 
+
+-> It maintains a symbol table that stores information about variables, functions, and other symbols used in the program, used in the lexical analysis or parsing phase.
+-> It handles different scopes, ex, local and global variables, and ensures symbols are resolved based on their scope of declaration 
+->  C4 also ensures that the correct types are used for variables and function calls
+
+3. What are the limitations of C4 as a compiler? What features of C does it not support?
+
+-> C4 might not support the entire C standard library.
+-> C’s preprocessor might not be fully implemented in C4. This could result in reduced flexibility in handling macros and preprocessor directives
+-> C4 has a Limitation in error handling, meaning that error messages might not be descriptive 
+-> Lack of advanced optimizations 
+
+4. How does C4 achieve self-hosting (i.e., compiling itself)? What are the implications of this design?
+
+-> Achieving self-hosting might require C4 to rely on a minimal runtime environment, particularly for features such as memory management
+-> Simple version of C4 can compile a more advanced version of C4 over the time 
+
+Implications: 
+-> Can be more portable because it no longer depends on external tools.
+-> allows the compiler to be less dependent on external compilers or tools

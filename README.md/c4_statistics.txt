@@ -1,0 +1,94 @@
+1. Lines of code (LOC) for the entire program and for individual functions.
+
+cloc --by-file rust_project.c
+       1 text file.
+       1 unique file.                              
+       0 files ignored.
+
+github.com/AlDanial/cloc v 2.04  T=0.02 s (57.5 files/s, 36298.1 lines/s)
+-------------------------------------------------------------------------------
+File                             blank        comment           code
+-------------------------------------------------------------------------------
+rust_project.c                      59             70            502
+-------------------------------------------------------------------------------
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+      89     85   1016      0     111 next@59-169@rust_project.c
+     157     91   2403      1     202 expr@171-372@rust_project.c
+      47     15    395      0      49 stmt@374-422@rust_project.c
+     181    100   2214      2     208 main@424-631@rust_project.c
+1 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+    501     118.5    72.8     1507.0         4     rust_project.c
+
+* the entire program has 502 LOC (exclude comments and whitespaces) 
+* next function has 111 LOC
+* expr function has 202 LOC
+* stmt function has 49 LOC 
+* main function has 208 LOC
+
+
+2. Cyclomatic complexity of each function. 
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+      89     85   1016      0     111 next@59-169@rust_project.c
+     157     91   2403      1     202 expr@171-372@rust_project.c
+      47     15    395      0      49 stmt@374-422@rust_project.c
+     181    100   2214      2     208 main@424-631@rust_project.c
+
+* CCN shows the cyclomatic complexity for each function, we have 3 warnings because if the cyclomatic function is higher than 15 that's mean that the cyclomatic complexity is high because of the overusing branching statements (conditionals, loops, logical operators) 
+
+3.Number of functions and their sizes (in LOC).
+
+* we have four functions, the largest size of those functions is the main function with 181 LOC as shown below 
+===============================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+      89     85   1016      0     111 next@59-169@rust_project.c
+     157     91   2403      1     202 expr@171-372@rust_project.c
+      47     15    395      0      49 stmt@374-422@rust_project.c
+     181    100   2214      2     208 main@424-631@rust_project.c
+1 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+    501     118.5    72.8     1507.0         4     rust_project.c
+
+4. Number of global variables and their usage.
+
+5. Number of unique tokens and their frequency. 
+ 
+the total tokens that has been used in the program are 6028, but the total unique tokens are 1377, i saved it in file called token_frequency that shows all the tokens and the frequency for each one. 
+
+6. Number of branches, loops, and their nesting levels.
+
+it can be determined using the cyclomatic complexity provided above 
+->next function have 85 possible branches 
+->expr function has 91 possible branches 
+->stmt function has 15 possible branches 
+->main function has 100 possible branches 
+
+
+7. Memory usage patterns 
+==244390== Command: ./rust_project
+==244390== 
+usage: c4 [-s] [-d] file ...
+==244390== 
+==244390== HEAP SUMMARY:
+
+==244390==     in use at exit: 0 bytes in 0 blocks => here it provide the number of bytes that still allocated while the program still exits ( 0 bytes in 0 blocks) indicate that the program did not leave any memory allocated at exit 
+
+==244390==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated => the program one memory allocation and one free, means it freed the memory it allocated, but during the execution of the program it allocated 1024 bytes 
+
+==244390== 
+==244390== All heap blocks were freed -- no leaks are possible => indicate that any allocated memory is freed 
+
+==244390== 
+==244390== For lists of detected and suppressed errors, rerun with: -s
+
+==244390== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0) => no error has been dedicated  
+                                                                          

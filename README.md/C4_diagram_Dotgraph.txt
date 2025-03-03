@@ -1,0 +1,57 @@
+digraph G {
+
+  // Main function
+  main [shape=box, color=blue, style=filled, fillcolor=lightblue];
+  main -> printf;
+  main -> open;
+  main -> malloc;
+  main -> memset;
+  main -> next;
+  main -> read;
+  main -> close;
+  main -> stmt;
+  main -> free;
+  main -> memcmp;
+
+  // next function
+  next [shape=ellipse, color=green, style=filled, fillcolor=lightgreen];
+  next -> printf;
+  next -> memcmp;
+
+  // stmt function
+  stmt [shape=ellipse, color=green, style=filled, fillcolor=lightgreen];
+  stmt -> next;
+  stmt -> printf;
+  stmt -> exit;
+  stmt -> expr;
+  stmt -> stmt [label="recursive"];
+
+  // expr function
+  expr [shape=ellipse, color=green, style=filled, fillcolor=lightgreen];
+  expr -> printf;
+  expr -> exit;
+  expr -> next;
+  expr -> expr [label="recursive"];
+
+  // System/library functions
+  printf [shape=box, color=orange, style=filled, fillcolor=lightyellow];
+  open [shape=box, color=orange, style=filled, fillcolor=lightyellow];
+  malloc [shape=box, color=orange, style=filled, fillcolor=lightyellow];
+  memset [shape=box, color=orange, style=filled, fillcolor=lightyellow];
+  read [shape=box, color=orange, style=filled, fillcolor=lightyellow];
+  close [shape=box, color=orange, style=filled, fillcolor=lightyellow];
+  free [shape=box, color=orange, style=filled, fillcolor=lightyellow];
+  memcmp [shape=box, color=orange, style=filled, fillcolor=lightyellow];
+  exit [shape=box, color=orange, style=filled, fillcolor=lightyellow];
+
+  // Recursive edges
+  stmt -> stmt [label="recursive", color=red, style=dashed];
+  expr -> expr [label="recursive", color=red, style=dashed];
+
+  // Start and End Nodes
+  start [shape=Mdiamond, color=red];
+  end [shape=Msquare, color=red];
+
+  start -> main;
+  exit -> end;
+}
